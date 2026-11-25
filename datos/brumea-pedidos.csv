@@ -1,0 +1,9 @@
+numero_pedido,cliente,producto,estado,fecha_envio,localidad
+BRU-1001,Lucía Fernández,Vela Lavanda 200g,Entregado,2026-11-03,CABA
+BRU-1002,Martín Gómez,Vela Vainilla 200g,Entregado,2026-11-04,Lanús
+BRU-1003,Camila Rodríguez,Vela Naranja & Pimienta 200g,Despachado,2026-11-12,Rosario
+BRU-1004,Sofía Álvarez,"Pack 3 velas (Lavanda, Vainilla, Naranja & Pimienta)",Despachado,2026-11-10,Córdoba
+BRU-1005,Julián Pereyra,Vela Lavanda 200g,En preparación,,La Plata
+BRU-1006,Valentina Ruiz,Vela Vainilla 200g,En preparación,,CABA
+BRU-1007,Nicolás Díaz,Vela Naranja & Pimienta 200g,Despachado,2026-11-11,Mendoza
+BRU-1008,Agustina López,"Pack 2 velas (Lavanda, Vainilla)",Entregado,2026-11-05,Quilmes
