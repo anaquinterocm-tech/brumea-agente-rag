@@ -196,23 +196,67 @@ Formato de salida: texto plano, máximo 3 líneas, sin listas largas. Cerrá sie
 
 ## 7. Capturas
 
-**Workflow y ejecuciones con herramientas de Google Sheets**
-- `capturas/01-canvas-final.png`: canvas final con los dos flujos y las tres herramientas conectadas al agente (`buscar_faq`, `consultar_pedido`, `registrar_reclamo`).
-- `capturas/02-ejecucion-consulta-pedido.png`: ejecución exitosa en la que el agente usó `consultar_pedido` (pedido BRU-1003) y respondió con los datos reales de la planilla.
-- `capturas/03-ejecucion-reclamo-registrado.png`: ejecución exitosa con `registrar_reclamo` (pedido BRU-1007) tras la confirmación del cliente.
-- `capturas/04-hoja-reclamos.png`: la fila nueva en la hoja **Reclamos** de Google Sheets (fecha, pedido, cliente, motivo, estado).
+### Workflow y ejecuciones con herramientas de Google Sheets
 
-**Memoria y RAG**
-- `capturas/05-memoria-session-id.png`: Session ID = teléfono del remitente (`{{ $json.body.telefono }}`).
-- `capturas/06-ingesta-vector-store.png`: ingesta del documento en la Vector Store.
-- `capturas/07-prueba-envio-rosario.png`: consulta que usa el documento.
-- `capturas/08-prueba-memoria-caba.png`: prueba de memoria ("¿Y a CABA?").
-- `capturas/09-prueba-aromas.png`: no inventa un aroma inexistente.
-- `capturas/10-prueba-fuera-de-documento.png`: no inventa un precio y deriva a una persona.
+**Canvas final:** los dos flujos y las tres herramientas conectadas al agente (`buscar_faq`, `consultar_pedido`, `registrar_reclamo`).
 
-**Manejo de errores**
-- `capturas/11-error-respuesta-al-cliente.png` y `capturas/12-camino-de-error-canvas.png`: camino de error y respuesta que recibe el cliente.
-- `capturas/13`, `14` y `15`: errores reales 503, 429 y 404 del modelo.
+![Canvas final del workflow](capturas/01-canvas-final.png)
+
+**Consulta de un pedido (BRU-1003):** el agente usó `consultar_pedido` y respondió con los datos reales de la planilla.
+
+![Ejecución con consultar_pedido](capturas/02-ejecucion-consulta-pedido.png)
+
+**Reclamo registrado (BRU-1007):** tras la confirmación del cliente, el agente usó `registrar_reclamo`.
+
+![Ejecución con registrar_reclamo](capturas/03-ejecucion-reclamo-registrado.png)
+
+**Resultado en Google Sheets:** fila nueva en la hoja **Reclamos** (fecha, pedido, cliente, motivo, estado).
+
+![Hoja Reclamos con la fila nueva](capturas/04-hoja-reclamos.png)
+
+### Memoria y RAG
+
+**Session ID = teléfono del remitente** (`{{ $json.body.telefono }}`):
+
+![Memoria con Session ID](capturas/05-memoria-session-id.png)
+
+**Ingesta del documento en la Vector Store:**
+
+![Ingesta en la Vector Store](capturas/06-ingesta-vector-store.png)
+
+**Consulta que usa el documento** (envío a Rosario):
+
+![Prueba de envío a Rosario](capturas/07-prueba-envio-rosario.png)
+
+**Prueba de memoria** ("¿Y a CABA?"):
+
+![Prueba de memoria](capturas/08-prueba-memoria-caba.png)
+
+**No inventa un aroma inexistente:**
+
+![Prueba de aromas](capturas/09-prueba-aromas.png)
+
+**No inventa un precio y deriva a una persona:**
+
+![Prueba fuera del documento](capturas/10-prueba-fuera-de-documento.png)
+
+### Manejo de errores
+
+**Respuesta que recibe el cliente cuando falla el modelo:**
+
+![Respuesta de error al cliente](capturas/11-error-respuesta-al-cliente.png)
+
+**Camino de error en el canvas** (el AI Agent sale por *Error* hacia *Responder error*):
+
+![Camino de error](capturas/12-camino-de-error-canvas.png)
+
+**Errores reales del modelo durante las pruebas:** 503 (modelo saturado), 429 (cuota gratuita) y 404 (modelo retirado).
+
+![Error 503](capturas/13-error-503-modelo-saturado.png)
+
+![Error 429](capturas/14-error-429-cuota-gratuita.png)
+
+![Error 404](capturas/15-error-404-modelo-retirado.png)
 
 ---
 
